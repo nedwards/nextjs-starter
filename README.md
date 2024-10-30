@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Starter Application
+
+Starter application built using <a href="https://nextjs.org/" target="_blank">Next.js</a>. Also includes:
+
+- <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>
+- <a href="https://headlessui.com/" target="_blank">HeadlessUI</a>
+- <a href="https://resend.com/" target="_blank">Resend</a>
+- <a href="https://heroicons.com/" target="_blank">Heroicons</a>
+- <a href="https://plausible.io/" target="_blank">Plausible</a>
 
 ## Getting Started
 
-First, run the development server:
+Once you have cloned the repo, install the packages.
+
+```bash
+npm install
+# or
+yarn install
+```
+
+Create a `.env.local` file at the root level with the following variables. You can change these later but you will need them setup so you can run the initial build.
+
+```bash
+# BUSINESS
+WEBSITE_URL='http://www.your-website-name.com.au'
+CONTACT_EMAIL='your-email@website-name.com.au'
+
+# GOOGLE
+GOOGLE_ANALYTICS_ID=''
+GOOGLE_MAPS_URL=''
+
+# RESEND (contact form)
+EMAIL_FROM_ADDRESS=''
+EMAIL_TO_ADDRESS=''
+RESEND_API_KEY=''
+```
+
+Then run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Setting up Resend
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To test the contact form you will need to setup an account with <a href="https://resend.com/" target="_blank">Resend</a>.
 
-## Learn More
+Once you have access to the resend dashboard you can create your own api key which will be added to the `RESEND_API_KEY` found in your `.env.local` file.
 
-To learn more about Next.js, take a look at the following resources:
+##### Steps
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Go to <a href="https://resend.com/" target="_blank">Resend</a> and setup an account.
+- Once logged in, click the `API Keys` link from the left hand menu.
+- Then click the `+ Create API key` button.
+- You can name the api key, let's call it `Contact Form` or any other relevant name.
+- Then click `Add` and paste the api key value into the `RESEND_API_KEY` in your `.env.local` file.

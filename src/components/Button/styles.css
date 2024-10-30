@@ -1,0 +1,63 @@
+.button {
+  display: inline-flex;
+  background-color: var(--button-background-color);
+  border: 2px solid var(--button-background-color);
+  color: var(--button-color);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+  font-weight: var(--button-font-weight);
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.button:focus-visible {
+  outline-style: solid;
+  outline-color: var(--button-background-color);
+  outline-offset: 2px;
+  outline-width: 2px;
+}
+
+.button-primary {
+  background-color: var(--button-primary-background-color);
+  border-color: var(--button-primary-background-color);
+  color: var(--button-primary-color);
+}
+
+.button-primary:hover {
+  background-color: var(--button-primary-hover-background-color);
+  border-color: var(--button-primary-hover-border-color);
+}
+
+.button-primary:focus-visible {
+  outline-color: var(--button-primary-background-color);
+}
+
+.button-secondary {
+  background-color: var(--button-secondary-background-color);
+  border-color: var(--button-secondary-border-color);
+  color: var(--button-secondary-color);
+}
+
+.button-secondary:hover {
+  background-color: var(--button-secondary-hover-background-color);
+  border-color: var(--button-secondary-hover-border-color);
+}
+
+.button-secondary:focus-visible {
+  outline-color: var(--button-secondary-border-color);
+}
+
+.button-tertiary {
+  background-color: var(--button-tertiary-background-color);
+  border-color: var(--button-tertiary-border-color);
+  color: var(--button-tertiary-color);
+}
+
+.button-tertiary:hover {
+  background-color: var(--button-tertiary-hover-background-color);
+  border-color: var(--button-tertiary-hover-border-color);
+}
+
+.button-tertiary:focus-visible {
+  outline-color: var(--button-tertiary-background-color);
+}
