@@ -6,7 +6,6 @@ Starter application built using <a href="https://nextjs.org/" target="_blank">Ne
 - <a href="https://headlessui.com/" target="_blank">HeadlessUI</a>
 - <a href="https://resend.com/" target="_blank">Resend</a>
 - <a href="https://heroicons.com/" target="_blank">Heroicons</a>
-- <a href="https://plausible.io/" target="_blank">Plausible</a>
 
 ## Getting Started
 
@@ -57,4 +56,4 @@ Once you have access to the resend dashboard you can create your own api key whi
 - Once logged in, click the `API Keys` link from the left hand menu.
 - Then click the `+ Create API key` button.
 - You can name the api key, let's call it `Contact Form` or any other relevant name.
-- Then click `Add` and paste the api key value into the `RESEND_API_KEY` in your `.env.local` file.
+- Then click `Add` and paste the api key value into the `RESEND_API_KEY` variable within your `.env.local` file.
