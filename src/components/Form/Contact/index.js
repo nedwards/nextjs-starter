@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { Alert, Button } from '@/components'
 import clsx from 'clsx'
-import './styles.css'
 
 export function ContactForm() {
   const [successMessage, setSuccessMessage] = useState('')
@@ -71,7 +70,7 @@ export function ContactForm() {
       )}
 
       <div className="mb-4">
-        <label htmlFor="name" className="block text-gray-700 font-bold mb-1">
+        <label htmlFor="name" className="label">
           Name
         </label>
         <input
@@ -79,17 +78,14 @@ export function ContactForm() {
           id="name"
           aria-invalid={errors.name ? 'true' : 'false'}
           {...register('name', { required: 'Name is required' })}
-          className={clsx(
-            'w-full p-2 border rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-black',
-            { 'border-red-500 focus-visible:outline-red-500': errors.name }
-          )}
+          className={clsx('input', {
+            error: errors.name,
+          })}
         />
-        {errors.name && (
-          <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>
-        )}
+        {errors.name && <p className="message-error">{errors.name.message}</p>}
       </div>
       <div className="mb-4">
-        <label htmlFor="email" className="block text-gray-700 font-bold mb-1">
+        <label htmlFor="email" className="label">
           Email
         </label>
         <input
@@ -103,31 +99,25 @@ export function ContactForm() {
               message: 'Email is invalid',
             },
           })}
-          className={clsx(
-            'w-full p-2 border rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-black',
-            { 'border-red-500 focus-visible:outline-red-500': errors.email }
-          )}
+          className={clsx('input', { error: errors.email })}
         />
         {errors.email && (
-          <p className="text-sm text-red-500 mt-1">{errors.email.message}</p>
+          <p className="message-error">{errors.email.message}</p>
         )}
       </div>
       <div className="mb-4">
-        <label htmlFor="message" className="block text-gray-700 font-bold mb-1">
+        <label htmlFor="message" className="label">
           Message
         </label>
         <textarea
           id="message"
           aria-invalid={errors.message ? 'true' : 'false'}
           {...register('message', { required: 'Message is required' })}
-          className={clsx(
-            'w-full p-2 border rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-black',
-            { 'border-red-500 focus-visible:outline-red-500': errors.message }
-          )}
+          className={clsx('textarea', { error: errors.message })}
           rows="4"
         ></textarea>
         {errors.message && (
-          <p className="text-sm text-red-500 mt-1">{errors.message.message}</p>
+          <p className="message-error">{errors.message.message}</p>
         )}
       </div>
       <Button type="submit" className="w-full justify-center">
