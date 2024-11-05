@@ -1,6 +1,6 @@
 .label {
   display: block;
-  color: #4b5563;
+  color: rgb(55 65 81);
   font-weight: 700;
   margin-bottom: 0.25rem;
 }
@@ -15,18 +15,25 @@
 }
 
 .input:focus-visible,
-.textarea:focus-visible {
-  outline: 2px solid black;
+.textarea:focus-visible,
+.select:focus-visible {
+  outline: 2px solid #000;
 }
 
-input.error,
-textarea.error {
-  border-color: #ef4444;
-  outline-color: #ef4444;
+.input.error,
+.textarea.error,
+.select.error {
+  border-color: rgb(239 68 68);
 }
 
-.error-message {
+.input.error:focus-visible,
+.textarea.error:focus-visible,
+.select.error:focus-visible {
+  outline: 2px solid #ef4444;
+}
+
+.message-error {
   font-size: 0.875rem;
-  color: #ef4444;
+  color: rgb(239 68 68);
   margin-top: 0.25rem;
 }
