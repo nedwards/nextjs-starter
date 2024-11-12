@@ -17,7 +17,7 @@ export function Footer({ className, ...props }) {
       <Container>
         <Grid sm={1} md={12} className="text-center sm:text-left">
           <Column md={5}>
-            <Link href="/">
+            <Link href="/" className="inline-flex">
               <Logo />
             </Link>
             {config?.footer.description && (
@@ -25,7 +25,9 @@ export function Footer({ className, ...props }) {
                 {config?.footer.description}
               </p>
             )}
-            <SocialMedia className="mt-6" />
+            <div className="inline-flex">
+              <SocialMedia className="mt-6" />
+            </div>
           </Column>
           <Column md={7}>
             <Grid sm={3}>
