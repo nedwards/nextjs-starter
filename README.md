@@ -17,7 +17,7 @@ npm install
 yarn install
 ```
 
-Create a `.env.local` file at the root level with the following variables. You can change these later but you will need them setup so you can run the initial build.
+Create a `.env.local` file in your root directory. You can change these later but you will need them setup initially so you can run the build.
 
 ```bash
 # BUSINESS
@@ -28,10 +28,11 @@ CONTACT_EMAIL='your-email@website-name.com.au'
 GOOGLE_ANALYTICS_ID=''
 GOOGLE_MAPS_URL=''
 
-# RESEND (contact form)
+# RESEND (contact form / signup form)
 EMAIL_FROM_ADDRESS=''
 EMAIL_TO_ADDRESS=''
 RESEND_API_KEY=''
+RESEND_AUDIENCE_ID=''
 ```
 
 Then run the development server:
@@ -46,14 +47,16 @@ Open [http://localhost:3000](http://localhost:3000) to see the result.
 
 ### Setting up Resend
 
-To test the contact form you will need to setup an account with <a href="https://resend.com/" target="_blank">Resend</a>.
+To test the contact and newsletter subscription form you will need to setup an account with <a href="https://resend.com/" target="_blank">Resend</a>.
 
 Once you have access to the resend dashboard you can create your own api key which will be added to the `RESEND_API_KEY` found in your `.env.local` file.
 
 ##### Steps
 
 - Go to <a href="https://resend.com/" target="_blank">Resend</a> and setup an account.
-- Once logged in, click the `API Keys` link from the left hand menu.
+- Once logged in, click the `API Keys` link.
 - Then click the `+ Create API key` button.
-- You can name the api key, let's call it `Contact Form` or any other relevant name.
+- Next step is to name the api key, let's call it `Full Access`, and make sure to set the permission to `Full Access`.
 - Then click `Add` and paste the api key value into the `RESEND_API_KEY` variable within your `.env.local` file.
+- Now go to the `Audiences` link and copy your `Audience ID` string into the `RESEND_AUDIENCE_ID` variable within your `.env.local` file.
+- Now your forms are all setup and ready to start sending and storing emails.

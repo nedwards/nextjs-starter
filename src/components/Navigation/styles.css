@@ -53,6 +53,7 @@
 .nav-dropdown-link {
   display: block;
   padding: var(--nav-padding-vertical) var(--nav-padding-horizontal);
+  border-radius: var(--nav-dropdown-border-radius);
   color: var(--nav-text-color);
   text-decoration: none;
   font-weight: 600;

@@ -32,7 +32,7 @@
   outline: 2px solid #ef4444;
 }
 
-.message-error {
+.error-message {
   font-size: 0.875rem;
   color: rgb(239 68 68);
   margin-top: 0.25rem;

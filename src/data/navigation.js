@@ -22,6 +22,10 @@ export const navigation = {
         },
       ],
     },
+    {
+      label: 'Components',
+      href: '/components',
+    },
     { label: 'Contact', href: '/contact' },
   ],
 }

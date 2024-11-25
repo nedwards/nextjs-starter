@@ -3,7 +3,7 @@ export { Banner } from '@/components/Banner'
 export { Footer } from '@/components/Footer'
 export { Container } from '@/components/Container'
 export { Logo } from '@/components/Logo'
-export { ContactForm } from '@/components/ContactForm'
+export { ContactForm } from '@/components/Form/ContactForm'
 export { Navigation } from '@/components/Navigation'
 export { SocialMedia } from '@/components/SocialMedia'
 export { XIcon, InstagramIcon, FacebookIcon } from '@/components/Icons'
@@ -17,11 +17,7 @@ export { Button } from '@/components/Button'
 export { Accordion } from '@/components/Accordion'
 export { Team } from '@/components/Team'
 export { Features } from '@/components/Features'
-export { Label, Input, Select, Textarea } from '@/components/Form'
-
-
-
-
-
-
-
+export { TextareaField } from '@/components/Form/TextareaField'
+export { InputField } from '@/components/Form/InputField'
+export { SignupForm } from '@/components/Form/SignupForm'
+export { Pricing } from '@/components/Pricing'
