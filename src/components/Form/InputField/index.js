@@ -8,10 +8,10 @@ export function InputField({
   register,
   errors,
   validation,
-  className,
+  className = '',
   ...props
 }) {
-  const error = errors[name]?.message
+  const error = errors?.[name]?.message
 
   return (
     <div className={className}>
@@ -22,7 +22,7 @@ export function InputField({
         id={name}
         type={type}
         aria-invalid={error ? 'true' : 'false'}
-        {...register(name, validation)}
+        {...register?.(name, validation)}
         className={clsx(styles.input, { [styles.error]: error })}
         {...props}
       />

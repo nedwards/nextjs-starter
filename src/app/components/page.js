@@ -9,6 +9,10 @@ import {
   Features,
   Pricing,
   SignupForm,
+  InputField,
+  SelectField,
+  TextareaField,
+  RadioGroup,
 } from '@/components'
 
 // icons
@@ -217,6 +221,45 @@ export default function Page() {
       </div>
       <div className="mb-12">
         <Pricing />
+      </div>
+      <div className="mb-12">
+        <h2 className="text-3xl font-bold mb-8">Forms</h2>
+        <InputField name="input" label="Input" className="w-64 mb-6" />
+        <SelectField
+          name="select"
+          label="Select"
+          className="w-64 mb-6"
+          options={[
+            {
+              label: 'Please select',
+              value: '',
+            },
+            {
+              label: 'label 1',
+              value: 'value 1',
+            },
+          ]}
+        />
+        <RadioGroup
+          name="select"
+          label="Select"
+          className="mb-6"
+          items={[
+            {
+              label: 'label 1',
+              value: 'value 1',
+            },
+            {
+              label: 'label 2',
+              value: 'value 3',
+            },
+            {
+              label: 'label 3',
+              value: 'value 3',
+            },
+          ]}
+        />
+        <TextareaField name="textarea" label="Textarea" className="w-64" />
       </div>
       <div className="mb-12">
         <h2 className="text-3xl font-bold text-center mb-8">Signup Form</h2>
