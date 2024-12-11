@@ -60,3 +60,9 @@ Once you have access to the resend dashboard you can create your own api key whi
 - Then click `Add` and paste the api key value into the `RESEND_API_KEY` variable within your `.env.local` file.
 - Now go to the `Audiences` link and copy your `Audience ID` string into the `RESEND_AUDIENCE_ID` variable within your `.env.local` file.
 - Now your forms are all setup and ready to start sending and storing emails.
+
+## Deployments
+
+Deployments are made to Vercel.
+
+There are 2 github workflows setup for branch previews and also production deployments.

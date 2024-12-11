@@ -24,11 +24,6 @@ export async function POST(req) {
 
     const sanitizedEmail = validator.normalizeEmail(email)
 
-    // Optional: Save the email to a database
-    // Replace this with your database logic
-    console.log(`Storing email: ${sanitizedEmail}`)
-    // Example: Save to database logic here
-
     // Prepare the confirmation email
     const emailData = {
       from:
@@ -40,8 +35,8 @@ export async function POST(req) {
         <div>
           <h1>Welcome to Our Newsletter!</h1>
           <p>
-            Thank you for subscribing. You'll receive updates and the latest
-            news straight to your inbox.
+            Thank you for subscribing. You&apos;ll receive updates and the
+            latest news straight to your inbox.
           </p>
         </div>
       ),
