@@ -1,4 +1,4 @@
-import styles from '../styles.module.css'
+import styles from './styles.module.css'
 
 export function RadioGroup({
   name,
@@ -20,27 +20,17 @@ export function RadioGroup({
       {items.map((item, index) => {
         const id = `${name}-${index}`
         return (
-          <div key={id} className={styles['radio-group']}>
-            <div className={styles['radio-input-container']}>
-              <input
-                key={id}
-                id={id}
-                name={name}
-                defaultChecked={defaultChecked === item.label}
-                type="radio"
-                className={styles['radio-input']}
-              />
-            </div>
-            <div className="radio-label-container">
-              <label htmlFor={id} className={styles['radio-label']}>
-                {item.label}
-                {item.description && (
-                  <span className={styles['radio-label-description']}>
-                    {item.description}
-                  </span>
-                )}
-              </label>
-            </div>
+          <div key={id} className={styles['radio-container']}>
+            <input
+              defaultChecked={defaultChecked === item.label}
+              id={id}
+              name={name}
+              type="radio"
+              className={styles['radio-input']}
+            />
+            <label htmlFor={id} className={styles['radio-label']}>
+              {item.label}
+            </label>
           </div>
         )
       })}

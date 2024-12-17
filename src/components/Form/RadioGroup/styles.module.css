@@ -1,0 +1,71 @@
+.radio-container {
+  display: flex;
+  align-items: center;
+}
+
+.radio-input {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  appearance: none;
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  background-color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Radio input focus state */
+.radio-input:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Radio input checked state */
+.radio-input:checked {
+  border-color: #4f46e5;
+  background-color: #4f46e5;
+}
+
+.radio-input:checked::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+/* Disabled state */
+.radio-input:disabled {
+  border-color: #d1d5db;
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.radio-input:disabled::before {
+  background-color: #9ca3af;
+}
+
+/* Radio input with forced colors (high-contrast mode) */
+@media (forced-colors: active) {
+  .radio-input {
+    appearance: auto;
+  }
+  .radio-input::before {
+    display: none;
+  }
+}
+
+/* Hide the inner circle when not checked */
+.radio-input:not(:checked)::before {
+  display: none;
+}
+
+/* Label styling */
+.radio-label {
+  margin-left: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: #111827;
+}

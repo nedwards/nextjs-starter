@@ -1,0 +1,114 @@
+.checkbox .checkbox-container:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  height: 1.5rem;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.checkbox-group {
+  display: grid;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.checkbox-input {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  appearance: none;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Checked state */
+.checkbox-input:checked {
+  border-color: #4f46e5;
+  background-color: #4f46e5;
+}
+
+.checkbox-input:checked ~ .checkbox-icon .checkbox-icon-checked {
+  opacity: 1;
+}
+
+.checkbox-input:indeterminate {
+  border-color: #4f46e5;
+  background-color: #4f46e5;
+}
+
+.checkbox-input:indeterminate ~ .checkbox-icon .checkbox-icon-indeterminate {
+  opacity: 1;
+}
+
+/* Disabled state */
+.checkbox-input:disabled {
+  border-color: #d1d5db;
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.checkbox-input:disabled:checked {
+  background-color: #f3f4f6;
+}
+
+/* Focus-visible state */
+.checkbox-input:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Icon container */
+.checkbox-icon {
+  pointer-events: none;
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  width: 0.875rem;
+  height: 0.875rem;
+  stroke: #ffffff;
+  align-self: center;
+  justify-self: center;
+}
+
+/* Checked icon path */
+.checkbox-icon-checked {
+  opacity: 0;
+}
+
+/* Indeterminate icon path */
+.checkbox-icon-indeterminate {
+  opacity: 0;
+}
+
+/* Disabled icon stroke */
+.checkbox-input:disabled ~ .checkbox-icon {
+  stroke: rgba(31, 41, 55, 0.25);
+}
+
+/* Label and description text */
+.checkbox-text {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.checkbox-label {
+  font-weight: 500;
+  color: #111827;
+}
+
+.checkbox-description {
+  color: #6b7280;
+}

@@ -13,6 +13,7 @@ import {
   SelectField,
   TextareaField,
   RadioGroup,
+  Checkbox,
 } from '@/components'
 
 // icons
@@ -241,8 +242,27 @@ export default function Page() {
           ]}
         />
         <RadioGroup
-          name="select"
-          label="Select"
+          name="radio"
+          label="Radio"
+          className="mb-6"
+          items={[
+            {
+              label: 'label 1',
+              value: 'value 1',
+            },
+            {
+              label: 'label 2',
+              value: 'value 3',
+            },
+            {
+              label: 'label 3',
+              value: 'value 3',
+            },
+          ]}
+        />
+        <Checkbox
+          name="checkbox"
+          label="Checkbox"
           className="mb-6"
           items={[
             {
