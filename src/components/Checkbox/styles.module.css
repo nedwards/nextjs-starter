@@ -6,6 +6,7 @@
   display: flex;
   gap: 0.75rem;
   align-items: flex-start;
+  margin-bottom: 0.25rem;
 }
 
 .checkbox-wrapper {
@@ -17,8 +18,8 @@
 
 .checkbox-group {
   display: grid;
-  width: 1rem;
-  height: 1rem;
+  width: 1.3rem;
+  height: 1.3rem;
   position: relative;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -30,7 +31,7 @@
   appearance: none;
   border: 1px solid #d1d5db;
   background-color: #ffffff;
-  border-radius: 0.25rem;
+  border-radius: 5px;
   cursor: pointer;
   outline: none;
 }
@@ -41,16 +42,7 @@
   background-color: #4f46e5;
 }
 
-.checkbox-input:checked ~ .checkbox-icon .checkbox-icon-checked {
-  opacity: 1;
-}
-
-.checkbox-input:indeterminate {
-  border-color: #4f46e5;
-  background-color: #4f46e5;
-}
-
-.checkbox-input:indeterminate ~ .checkbox-icon .checkbox-icon-indeterminate {
+.checkbox-input:checked ~ .checkbox-icon {
   opacity: 1;
 }
 
@@ -73,24 +65,16 @@
 
 /* Icon container */
 .checkbox-icon {
+  opacity: 0;
+  fill: #fff;
+  grid-row-start: 1;
+  grid-column-start: 1;
   pointer-events: none;
-  grid-column: 1 / 1;
-  grid-row: 1 / 1;
   width: 0.875rem;
   height: 0.875rem;
   stroke: #ffffff;
   align-self: center;
   justify-self: center;
-}
-
-/* Checked icon path */
-.checkbox-icon-checked {
-  opacity: 0;
-}
-
-/* Indeterminate icon path */
-.checkbox-icon-indeterminate {
-  opacity: 0;
 }
 
 /* Disabled icon stroke */

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Alert, Button, InputField } from '@/components'
+import { Alert, FormGroup, Button, Input } from '@/components'
 
 export function SignupForm() {
   const [successMessage, setSuccessMessage] = useState('')
@@ -57,43 +57,45 @@ export function SignupForm() {
         </Alert>
       )}
 
-      <InputField
+      <FormGroup
         name="firstName"
         label="First Name"
         register={register}
         errors={errors}
         validation={{
-          maxLength: { value: 50, message: 'First Name is too long' },
+          required: 'First name is required',
         }}
-        className="mb-4"
-      />
+      >
+        <Input />
+      </FormGroup>
 
-      <InputField
+      <FormGroup
         name="lastName"
         label="Last Name"
         register={register}
         errors={errors}
         validation={{
-          maxLength: { value: 50, message: 'Last Name is too long' },
+          required: 'Last name is required',
         }}
-        className="mb-4"
-      />
+      >
+        <Input />
+      </FormGroup>
 
-      <InputField
+      <FormGroup
         name="email"
         label="Email"
-        type="email"
         register={register}
         errors={errors}
         validation={{
           required: 'Email is required',
           pattern: {
             value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-            message: 'Invalid email address',
+            message: 'Email is invalid',
           },
         }}
-        className="mb-4"
-      />
+      >
+        <Input />
+      </FormGroup>
 
       <Button type="submit" className="w-full justify-center">
         Signup

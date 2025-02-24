@@ -1,22 +1,18 @@
+import clsx from 'clsx'
 import styles from './styles.module.css'
 
 export function Checkbox({
   name,
-  label,
   items = [],
   register,
-  errors,
-  defaultChecked = '',
+  error,
   validation,
+  defaultChecked = '',
   className = '',
+  ...props
 }) {
-  const error = errors?.[name]?.message
-
   return (
-    <fieldset className={`${styles.checkbox} ${className}`}>
-      <legend htmlFor={name} className={styles.label}>
-        {label}
-      </legend>
+    <>
       {items.map((item, index) => {
         const id = `${name}-${index}`
         return (
@@ -26,26 +22,23 @@ export function Checkbox({
                 <input
                   defaultChecked={defaultChecked === item.label}
                   id={id}
-                  name={name}
                   type="checkbox"
-                  aria-describedby={`${id}-description`}
-                  className={styles['checkbox-input']}
+                  name={name}
+                  value={item.value}
+                  {...register(name, validation)}
+                  className={clsx(
+                    styles['checkbox-input'],
+                    { [styles.error]: error },
+                    className
+                  )}
+                  {...props}
                 />
-                <svg viewBox="0 0 14 14" className={styles['checkbox-icon']}>
-                  <path
-                    d="M3 8L6 11L11 3.5"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={styles['checkbox-icon-checked']}
-                  />
-                  <path
-                    d="M3 7H11"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={styles['checkbox-icon-indeterminate']}
-                  />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  className={styles['checkbox-icon']}
+                >
+                  <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
                 </svg>
               </div>
             </div>
@@ -65,7 +58,6 @@ export function Checkbox({
           </div>
         )
       })}
-      {error && <p className={styles['error-message']}>{error}</p>}
-    </fieldset>
+    </>
   )
 }

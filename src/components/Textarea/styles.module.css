@@ -1,0 +1,18 @@
+.textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+}
+
+.textarea:focus-visible {
+  outline: 2px solid #000;
+}
+
+.error {
+  border-color: rgb(239 68 68);
+}
+
+.error:focus-visible {
+  outline: 2px solid #ef4444;
+}

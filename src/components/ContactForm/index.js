@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { Alert, Button, InputField, TextareaField } from '@/components'
+import { Alert, Button, FormGroup, Input, Textarea } from '@/components'
 
 export function ContactForm() {
   const [successMessage, setSuccessMessage] = useState('')
@@ -67,8 +67,7 @@ export function ContactForm() {
           {successMessage}
         </Alert>
       )}
-
-      <InputField
+      <FormGroup
         name="name"
         label="Name"
         register={register}
@@ -76,12 +75,13 @@ export function ContactForm() {
         validation={{
           required: 'Name is required',
         }}
-        className="mb-4"
-      />
-      <InputField
+        className="mb-3"
+      >
+        <Input />
+      </FormGroup>
+      <FormGroup
         name="email"
         label="Email"
-        type="email"
         register={register}
         errors={errors}
         validation={{
@@ -91,9 +91,12 @@ export function ContactForm() {
             message: 'Email is invalid',
           },
         }}
-        className="mb-4"
-      />
-      <TextareaField
+        className="mb-3"
+      >
+        <Input />
+      </FormGroup>
+
+      <FormGroup
         name="message"
         label="Message"
         register={register}
@@ -101,8 +104,10 @@ export function ContactForm() {
         validation={{
           required: 'Message is required',
         }}
-        className="mb-4"
-      />
+        className="mb-3"
+      >
+        <Textarea />
+      </FormGroup>
       <Button type="submit" className="w-full justify-center">
         Send Message
       </Button>

@@ -1,0 +1,21 @@
+.label {
+  display: block;
+  color: rgb(55 65 81);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.error {
+  border-color: rgb(239 68 68);
+}
+
+.error:focus-visible {
+  outline: 2px solid #ef4444;
+}
+
+.error-message {
+  font-size: 0.875rem;
+  color: rgb(239 68 68);
+  margin-top: 0.25rem;
+}

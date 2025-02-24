@@ -88,8 +88,6 @@
 
 .nav-mobile-container {
   overflow: hidden;
-  transition: max-height var(--nav-transition-duration)
-    var(--nav-transition-timing);
   border-bottom: 1px solid var(--nav-border-color);
 }
 
@@ -123,8 +121,6 @@
 
 .nav-mobile-dropdown-container {
   overflow: hidden;
-  transition: max-height var(--nav-transition-duration)
-    var(--nav-transition-timing);
 }
 
 .nav-mobile-dropdown-link {

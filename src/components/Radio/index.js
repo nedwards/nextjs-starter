@@ -1,22 +1,18 @@
+import clsx from 'clsx'
 import styles from './styles.module.css'
 
-export function RadioGroup({
+export function Radio({
   name,
-  label,
   items = [],
   register,
-  errors,
-  defaultChecked = '',
+  error,
   validation,
+  defaultChecked = '',
   className = '',
+  ...props
 }) {
-  const error = errors?.[name]?.message
-
   return (
-    <fieldset className={className}>
-      <legend htmlFor={name} className={styles.label}>
-        {label}
-      </legend>
+    <div className={styles['radio-group']}>
       {items.map((item, index) => {
         const id = `${name}-${index}`
         return (
@@ -24,9 +20,16 @@ export function RadioGroup({
             <input
               defaultChecked={defaultChecked === item.label}
               id={id}
-              name={name}
               type="radio"
-              className={styles['radio-input']}
+              name={name}
+              value={item.value}
+              {...register(name, validation)}
+              className={clsx(
+                styles['radio-input'],
+                { [styles.error]: error },
+                className
+              )}
+              {...props}
             />
             <label htmlFor={id} className={styles['radio-label']}>
               {item.label}
@@ -34,7 +37,6 @@ export function RadioGroup({
           </div>
         )
       })}
-      {error && <p className={styles['error-message']}>{error}</p>}
-    </fieldset>
+    </div>
   )
 }
