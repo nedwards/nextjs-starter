@@ -89,15 +89,17 @@
 .nav-mobile-container {
   overflow: hidden;
   border-bottom: 1px solid var(--nav-border-color);
+  /* padding: var(--nav-padding-vertical) 0; */
 }
 
-.nav-mobile-inner {
-  padding: var(--nav-padding-vertical) 0;
+.nav-mobile-item:not(:last-child) {
+  /* border-bottom: 1px solid var(--nav-border-color); */
 }
 
 .nav-mobile-link {
+  /* text-align: center; */
   display: block;
-  padding: var(--nav-padding-vertical) var(--nav-padding-horizontal);
+  padding: 0.75rem var(--nav-padding-horizontal);
   color: var(--nav-text-color);
   font-weight: 600;
   text-decoration: none;
@@ -110,9 +112,10 @@
 .nav-mobile-button {
   display: flex;
   align-items: center;
+  /* justify-content: center; */
   width: 100%;
   font-weight: 600;
-  padding: var(--nav-padding-vertical) var(--nav-padding-horizontal);
+  padding: 0.75rem var(--nav-padding-horizontal);
   color: var(--nav-text-color);
   background: none;
   border: none;
@@ -125,7 +128,7 @@
 
 .nav-mobile-dropdown-link {
   display: block;
-  padding: var(--nav-padding-vertical) var(--nav-padding-horizontal);
+  padding: 0.75rem var(--nav-padding-horizontal);
   color: var(--nav-text-color);
   font-weight: 600;
   text-decoration: none;

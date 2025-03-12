@@ -56,9 +56,9 @@ function MobileNav({
         isOpen ? 'max-height-screen' : 'max-height-0'
       )}
     >
-      <div className="nav-mobile-inner">
+      <div>
         {navItems.map((item, index) => (
-          <div key={index}>
+          <div key={index} className="nav-mobile-item">
             {!item.items ? (
               <a href={item.href} className="nav-mobile-link">
                 {item.label}
